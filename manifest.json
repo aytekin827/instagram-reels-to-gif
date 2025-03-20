@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Instagram Reels to GIF",
+    "version": "1.0",
+    "description": "download instagram reels as gif",
+    "permissions": ["activeTab", "downloads", "scripting"],
+    "host_permissions": ["https://www.instagram.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.instagram.com/reel/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
